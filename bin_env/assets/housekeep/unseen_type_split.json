@@ -1,0 +1,22 @@
+{
+  "train": [
+    "bottle_021_bleach_cleanser_M",
+    "bottle_Weston_No_33_Signature_Sausage_Tonic_12_fl_oz_M",
+    "bottle_frl_apartment_kitchen_utensil_09_M",
+    "mug_025_mug_M",
+    "mug_Room_Essentials_Mug_White_Yellow_M",
+    "mug_Threshold_Porcelain_Coffee_Mug_All_Over_Bead_White_M",
+    "mug_frl_apartment_cup_05_M",
+    "mug_kitchen_set_kitchen_set_mug_2_M",
+    "mug_kitchen_set_kitchen_set_mug_M",
+    "pillbottle_Beta_Glucan_M",
+    "pillbottle_Germanium_GE132_M",
+    "pillbottle_Pet_Dophilus_powder_M"
+  ],
+  "test": [
+    "cup_065-f_cups_M",
+    "cup_BIA_Cordon_Bleu_White_Porcelain_Utensil_Holder_900028_M",
+    "cup_Ecoforms_Cup_B4_SAN_M",
+    "cup_065-a_cups_M"
+  ]
+}

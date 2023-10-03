@@ -1,0 +1,31 @@
+name: hacman
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8
+  - patchelf=0.12
+  - setuptools==65.5.0
+  - pip
+  - numba
+  - pip:
+      - class-resolver==0.3.10
+      - gym==0.21.0
+      - numpy==1.23.0
+      - imageio==2.29.0
+      - matplotlib==3.7.1
+      - open3d==0.16.0
+      - pandas==2.0.1
+      - plotly==5.14.1
+      - pytorch3d==0.3.0
+      - scipy==1.10.1
+      - tensorboard==2.13.0
+      - tqdm==4.65.0
+      - transforms3d==0.4.1
+      - wandb==0.15.3
+      - -e stable-baselines3/.
+      # robosuite dependencies
+      - cython==0.29.26
+      - h5py==3.7.0
+      - lxml==4.9.1
+      - opencv-python==4.6.0.66

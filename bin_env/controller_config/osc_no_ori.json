@@ -1,0 +1,13 @@
+{
+  "type": "OSC_customized_6D",
+  "max_translation": 0.02,
+  "max_rotation": 0.2,
+  "kp": [300, 300, 300, 30, 30, 30],
+  "impedance_mode": "fixed",
+  "position_limits": [[0.275, -0.27, 0.065],[0.725, 0.27, 0.202]],
+  "orientation_limits": 360,
+  "uncouple_pos_ori": false,
+  "control_delta": true,
+  "interpolation": null,
+  "control_ori": false
+}

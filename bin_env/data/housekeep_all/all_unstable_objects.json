@@ -1,0 +1,122 @@
+{
+  "handheld_game_console_RedBlack_Nintendo_3DSXL_M": {
+    "unstable_objects_fixed_size.json": 32,
+    "unstable_objects_variable_size.json": 26,
+    "unstable_objects_variable_sizes_with_wall.json": 18,
+    "percentage": 0.25333333333333335
+  },
+  "hat_DPC_Handmade_Hat_Brown_M": {
+    "unstable_objects_fixed_size.json": 28,
+    "unstable_objects_variable_size.json": 22,
+    "unstable_objects_variable_sizes_with_wall.json": 14,
+    "percentage": 0.21333333333333335
+  },
+  "can_opener_OXO_Soft_Works_Can_Opener_SnapLock_M": {
+    "unstable_objects_fixed_size.json": 27,
+    "unstable_objects_variable_size.json": 34,
+    "unstable_objects_variable_sizes_with_wall.json": 16,
+    "percentage": 0.25666666666666665
+  },
+  "tray_Design_Ideas_Drawer_Store_Organizer_M": {
+    "unstable_objects_fixed_size.json": 42,
+    "unstable_objects_variable_size.json": 42,
+    "unstable_objects_variable_sizes_with_wall.json": 42,
+    "percentage": 0.42
+  },
+  "lego_block_073-c_lego_duplo_M": {
+    "unstable_objects_fixed_size.json": 17,
+    "unstable_objects_variable_size.json": 17,
+    "unstable_objects_variable_sizes_with_wall.json": 17,
+    "percentage": 0.17
+  },
+  "keyboard_Kanex_MultiSync_Wireless_Keyboard_M": {
+    "unstable_objects_fixed_size.json": 38,
+    "unstable_objects_variable_size.json": 40,
+    "unstable_objects_variable_sizes_with_wall.json": 26,
+    "percentage": 0.3466666666666667
+  },
+  "clock_frl_apartment_clock_M": {
+    "unstable_objects_fixed_size.json": 29,
+    "unstable_objects_variable_size.json": 35,
+    "unstable_objects_variable_sizes_with_wall.json": 13,
+    "percentage": 0.25666666666666665
+  },
+  "hard_drive_Seagate_1TB_Backup_Plus_portable_drive_Blue_M": {
+    "unstable_objects_fixed_size.json": 32,
+    "unstable_objects_variable_size.json": 14,
+    "percentage": 0.15333333333333332
+  },
+  "lego_block_073-a_lego_duplo_M": {
+    "unstable_objects_fixed_size.json": 29,
+    "unstable_objects_variable_size.json": 34,
+    "unstable_objects_variable_sizes_with_wall.json": 21,
+    "percentage": 0.28
+  },
+  "mouse_Razer_Naga_MMO_Gaming_Mouse_M": {
+    "unstable_objects_fixed_size.json": 33,
+    "unstable_objects_variable_size.json": 34,
+    "unstable_objects_variable_sizes_with_wall.json": 20,
+    "percentage": 0.29
+  },
+  "box_Little_Debbie_Donut_Sticks_6_cake_donuts_10_oz_total_M": {
+    "unstable_objects_fixed_size.json": 48,
+    "unstable_objects_variable_size.json": 39,
+    "unstable_objects_variable_sizes_with_wall.json": 16,
+    "percentage": 0.3433333333333333
+  },
+  "keyboard_Razer_Blackwidow_Tournament_Edition_Keyboard_M": {
+    "unstable_objects_fixed_size.json": 49,
+    "unstable_objects_variable_size.json": 52,
+    "unstable_objects_variable_sizes_with_wall.json": 16,
+    "percentage": 0.39
+  },
+  "magnifying_glass_Magnifying_Glassassrt_M": {
+    "unstable_objects_fixed_size.json": 46,
+    "unstable_objects_variable_size.json": 48,
+    "unstable_objects_variable_sizes_with_wall.json": 16,
+    "percentage": 0.36666666666666664
+  },
+  "pitcher_019_pitcher_base_M": {
+    "unstable_objects_fixed_size.json": 45,
+    "unstable_objects_variable_size.json": 37,
+    "percentage": 0.2733333333333333
+  },
+  "book_frl_apartment_book_02_M": {
+    "unstable_objects_fixed_size.json": 58,
+    "unstable_objects_variable_size.json": 51,
+    "unstable_objects_variable_sizes_with_wall.json": 53,
+    "percentage": 0.54
+  },
+  "bowl_kitchen_set_kitchen_set_soup_bowl_M": {
+    "unstable_objects_fixed_size.json": 100,
+    "unstable_objects_variable_size.json": 94,
+    "unstable_objects_variable_sizes_with_wall.json": 33,
+    "percentage": 0.7566666666666667
+  },
+  "hair_straightener_Remington_TStudio_Silk_Ceramic_Hair_Straightener_2_Inch_Floating_Plates_M": {
+    "unstable_objects_fixed_size.json": 40,
+    "unstable_objects_variable_size.json": 22,
+    "percentage": 0.20666666666666667
+  },
+  "energy_bar_Nestle_Candy_19_oz_Butterfinger_Singles_116567_M": {
+    "unstable_objects_variable_size.json": 15,
+    "percentage": 0.05
+  },
+  "spatula_033_spatula_M": {
+    "unstable_objects_variable_size.json": 16,
+    "percentage": 0.05333333333333334
+  },
+  "hair_straightener_Remington_1_12_inch_Hair_Straightener_M": {
+    "unstable_objects_variable_size.json": 14,
+    "percentage": 0.04666666666666667
+  },
+  "tray_Ecoforms_Saucer_SQ3_Turquoise_M": {
+    "unstable_objects_variable_size.json": 18,
+    "unstable_objects_variable_sizes_with_wall.json": 16,
+    "percentage": 0.11333333333333333
+  },
+  "wrench_042_adjustable_wrench_M": {
+    "unstable_objects_variable_size.json": 14,
+    "percentage": 0.04666666666666667
+  }
+}

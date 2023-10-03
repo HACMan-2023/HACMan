@@ -1,0 +1,17 @@
+<mujoco model="pillbottle_Germanium_GE132_M">
+  <asset>
+    <mesh file="meshes/pillbottle_Germanium_GE132_M.stl" name="pillbottle_mesh" scale="1.0827139278516498 1.0827139278516498 1.0827139278516498"/>
+    <texture type="cube" file="/home/jbw/Projects/gc-reorientation/bin_env/assets/textures/ceramic.png" rgb1="1 1 1" name="tex-pillbottle"/>
+    <material name="pillbottle" reflectance="0.5" texrepeat="3 3" texture="tex-pillbottle"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom pos="0.2837091835597711 -0.09258129427580825 -0.002178474319574532" quat="1 0 0 0" mesh="pillbottle_mesh" type="mesh" solref="0.02 1" density="0" friction="1.0 1.0 1.0" material="pillbottle" group="0" condim="4"/>
+      </body>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 -0.05" name="bottom_site"/>
+      <site rgba="0 0 0 0" size="0.005" pos="0 0 0.03" name="top_site"/>
+      <site rgba="0 0 0 0" size="0.005" pos="0.02 0.015 0" name="horizontal_radius_site"/>
+    </body>
+  </worldbody>
+</mujoco>

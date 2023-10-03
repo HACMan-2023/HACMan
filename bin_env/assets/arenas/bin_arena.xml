@@ -1,0 +1,113 @@
+<mujoco model="table_arena">
+  <asset>
+    <texture builtin="gradient" height="256" rgb1=".9 .9 1." rgb2=".2 .3 .4" type="skybox" width="256"/>
+    <texture file="../textures/wood-tiles.png" type="2d" name="texplane"/>
+    <material name="floorplane" reflectance="0.01" shininess="0.0" specular="0.0" texrepeat="2 2" texture="texplane" texuniform="true"/>
+    <!-- ceramic table texture and material-->
+    <texture file="../textures/ceramic.png" type="cube" name="tex-ceramic"/>
+    <material name="table_ceramic" reflectance="0.0" shininess="0.0" specular="0.2" texrepeat="1 1" texture="tex-ceramic" />
+    <!-- steel legs -->
+    <texture file="../textures/steel-brushed.png" type="cube" name="tex-steel-brushed"/>
+    <material name="table_legs_metal" reflectance="0.8" shininess="0.8" texrepeat="1 1" texture="tex-steel-brushed" />
+    <!-- plaster walls -->
+    <texture file="../textures/cream-plaster.png" type="2d" name="tex-cream-plaster"/>
+    <material name="walls_mat" reflectance="0.0" shininess="0.1" specular="0.1" texrepeat="3 3" texture="tex-cream-plaster" texuniform="true" />
+    <!-- added table texture and material for domain randomization -->
+    <texture  name="textable" builtin="flat" height="512" width="512" rgb1="0.5 0.5 0.5" rgb2="0.5 0.5 0.5"/>
+    <material name="table_mat" texture="textable" />
+    <!-- bins -->
+    <texture file="../textures/light-wood.png" type="2d" name="tex-light-wood"/>
+    <texture file="../textures/dark-wood.png" type="2d" name="tex-dark-wood"/>
+    <material name="light-wood" reflectance="0" texrepeat="15 15" texture="tex-light-wood" texuniform="true"/>
+    <material name="dark-wood" reflectance="0" texrepeat="5 5" texture="tex-dark-wood" texuniform="true"/>
+    <!-- target gripper -->
+    <mesh name="hand" file="../panda_gripper_meshes/hand.stl" />
+    <mesh name="hand_vis" file="../panda_gripper_meshes/hand_vis.stl" />
+    <mesh name="finger" file="../panda_gripper_meshes/finger.stl" />
+    <mesh name="finger_vis" file="../panda_gripper_meshes/finger_vis.stl" />
+    <mesh name="finger_vis2" file="../panda_gripper_meshes/finger_longer.stl" />
+    <texture type="cube" name="hand_tex" builtin="flat" width="100" height="100" rgb1="1 1 1" rgb2="1 1 1"/>
+    <texture type="cube" name="finger_tex" builtin="flat" width="100" height="100" rgb1="0.5 0.5 0.5" rgb2="0.5 0.5 0.5"/>
+    <material name="hand_mat" texture="hand_tex" rgba="1 1 1 0.5"/>
+    <material name="finger_mat" texture="finger_tex" rgba="1 1 1 0.5"/>
+
+  </asset>
+  <worldbody>
+    <!-- Floor -->
+    <geom condim="3" material="floorplane" name="floor" pos="0 0 0" size="3 3 .125" type="plane"/>
+    <!-- Walls (visual only) -->
+    <geom pos="-1.25 2.25 1.5" quat="0.6532815 0.6532815 0.2705981 0.2705981" size="1.06 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_leftcorner_visual" material="walls_mat"/>
+    <geom pos="-1.25 -2.25 1.5" quat="0.6532815 0.6532815 -0.2705981 -0.2705981" size="1.06 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_rightcorner_visual" material="walls_mat"/>
+    <geom pos="1.25 3 1.5" quat="0.7071 0.7071 0 0" size="1.75 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_left_visual" material="walls_mat"/>
+    <geom pos="1.25 -3 1.5" quat="0.7071 -0.7071 0 0" size="1.75 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_right_visual" material="walls_mat"/>
+    <geom pos="-2 0 1.5" quat="0.5 0.5 0.5 0.5" size="1.5 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_rear_visual" material="walls_mat"/>
+    <geom pos="3 0 1.5" quat="0.5 0.5 -0.5 -0.5" size="3 1.5 0.01" type="box" conaffinity="0" contype="0" group="1" name="wall_front_visual" material="walls_mat"/>
+    <!-- Table body -->
+    <body name="table" pos="0 0 0.4">
+      <geom pos="0 0 0" size="0.4 0.4 0.4" type="box" name="table_collision" friction="1 0.005 0.0001"/>
+      <geom pos="0 0 0" size="0.4 0.4 0.4" type="box" conaffinity="0" contype="0" group="1" name="table_visual" material="table_ceramic"/>
+      <site pos="0 0 0.4" name="table_top" size="0.001 0.001 0.001" rgba="0 0 0 0"/>
+      <!-- Legs (visual only) -->
+      <geom pos="0 0 0" size="0.05 0.1" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg1_visual" material="table_legs_metal"/>
+      <geom pos="0 0 0" size="0.05 0.1" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg2_visual" material="table_legs_metal"/>
+      <geom pos="0 0 0" size="0.05 0.1" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg3_visual" material="table_legs_metal"/>
+      <geom pos="0 0 0" size="0.05 0.1" type="cylinder" conaffinity="0" contype="0" group="1" name="table_leg4_visual" material="table_legs_metal"/>
+    </body>
+    <!-- Bin -->
+    <body name="bin" pos="0 0 0.8">
+      <site name="bin_center" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 0.2" type="sphere" group="1"/>
+      <geom pos="0 0 0.01" size="0.225 0.27 0.01" type="box" name="bin_bottom_collision" friction="0.3 0.005 0.0001" rgba="0 0 1 1" priority="1"/>
+      <geom pos="0 0 0.01" size="0.225 0.27 0.01" type="box" name="bin_bottom_visual" conaffinity="0" contype="0" group="1" material="light-wood"/>
+      <geom pos="0 0.275 0.0675" size="0.225 0.01 0.0675" type="box" name="bin_right_collision" friction="0.3 0.005 0.0001" rgba="0 0 1 1" priority="1"/>
+      <geom pos="0 0.275 0.0675" size="0.225 0.01 0.0675" type="box" name="bin_right_visual" conaffinity="0" contype="0" group="1" material="light-wood"/>
+      <geom pos="0.23 0 0.0675" size="0.01 0.27 0.0675" type="box" name="bin_front_collision" friction="0.3 0.005 0.0001" rgba="0 0 1 1" priority="1"/>
+      <geom pos="0.23 0 0.0675" size="0.01 0.27 0.0675" type="box" name="bin_front_visual" conaffinity="0" contype="0" group="1" material="light-wood"/>
+      <geom pos="0 -0.275 0.0675" size="0.225 0.01 0.0675" type="box" name="bin_left_collision" friction="0.3 0.005 0.0001" rgba="0 0 1 1" priority="1"/>
+      <geom pos="0 -0.275 0.0675" size="0.225 0.01 0.0675" type="box" name="bin_left_visual" conaffinity="0" contype="0" group="1" material="light-wood"/>
+      <geom pos="-0.23 0 0.0675" size="0.01 0.27 0.0675" type="box" name="bin_back_collision" friction="0.3 0.005 0.0001" rgba="0 0 1 1" priority="1"/>
+      <geom pos="-0.23 0 0.0675" size="0.01 0.27 0.0675" type="box" name="bin_back_visual" conaffinity="0" contype="0" group="1" material="light-wood"/>
+    </body>
+
+    <body name="target_eef" pos="0 0 0" quat="0 0 1 0">
+      <site name="target_eef:grip_site" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 0.5" type="sphere" group="1"/>
+      <site name="target_eef:ee_x" pos="0.03 0 0" size="0.005 .03"  quat="0.707105  0 0.707108 0 " rgba="1 0 0 1" type="cylinder" group="1"/>
+      <site name="target_eef:ee_y" pos="0 0.03 0" size="0.005 .03" quat="0.707105 0.707108 0 0" rgba="0 1 0 1" type="cylinder" group="1"/>
+      <site name="target_eef:ee_z" pos="0 0 0.03" size="0.005 .03" quat="1 0 0 0" rgba="0 0 1 1" type="cylinder" group="1"/>
+    </body>
+
+    <light name="light1" diffuse=".8 .8 .8" dir="0 -.15 -1" directional="false" pos="1 1 4.0" specular="0.3 0.3 0.3" castshadow="false"/>
+    <light name="light2" diffuse=".8 .8 .8" dir="0 -.15 -1" directional="false" pos="-3. -3. 4.0" specular="0.3 0.3 0.3" castshadow="false"/>
+    <!-- front view -->
+    <camera mode="fixed" name="frontview" pos="1.6 0 1.45" quat="0.56 0.43 0.43 0.56"/>
+    <!-- bird view -->
+    <camera mode="fixed" name="birdview" pos="-0.2 0 3.0" quat="0.7071 0 0 0.7071"/>
+    <!-- agent view -->
+    <camera mode="fixed" name="agentview" pos="0.5 0 1.45" quat="0.653 0.271 0.271 0.653"/>
+    <!-- side view -->
+    <!--Euler ZXY: x=60, z=-30-->
+    <camera mode="fixed" name="leftview" pos="-0.3 -0.4 1.1" quat="0.8365163 0.4829629 -0.1294095 -0.2241439" fovy="60"/>
+    <!-- side view -->
+    <!--Euler ZXY: x=60, z=-150-->
+    <camera mode="fixed" name="rightview" pos="-0.3 0.4 1.1" quat="0.2241439 0.1294095 -0.4829629 -0.8365163" fovy="60" />  
+
+    <!--Visualize Camera poses-->
+    <body name="agentview_site" pos="0.5 0 1.45" quat="0.653 0.271 0.271 0.653">
+        <site name="agentview_site:origin" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 0.2" type="sphere" group="1"/>
+        <site name="agentview_site:xaxis" pos="0.05 0 0" size="0.05 0.005 0.005" rgba="1 0 0 1" type="box" group="1"/>
+        <site name="agentview_site:yaxis" pos="0 0.05 0" size="0.005 0.05 0.005" rgba="0 1 0 1" type="box" group="1"/>
+        <site name="agentview_site:zaxis" pos="0 0 0.05" size="0.005 0.005 0.05" rgba="0 0 1 1" type="box" group="1"/>
+    </body>  
+    <body name="leftview_site" pos="-0.3 -0.4 1.1" quat="0.8365163 0.4829629 -0.1294095 -0.2241439">
+        <site name="leftview_site:origin" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 0.2" type="sphere" group="1"/>
+        <site name="leftview_site:xaxis" pos="0.05 0 0" size="0.05 0.005 0.005" rgba="1 0 0 1" type="box" group="1"/>
+        <site name="leftview_site:yaxis" pos="0 0.05 0" size="0.005 0.05 0.005" rgba="0 1 0 1" type="box" group="1"/>
+        <site name="leftview_site:zaxis" pos="0 0 0.05" size="0.005 0.005 0.05" rgba="0 0 1 1" type="box" group="1"/>
+    </body>  
+    <body name="rightview_site" pos="-0.3 0.4 1.1" quat="0.2241439 0.1294095 -0.4829629 -0.8365163">
+        <site name="rightview_site:origin" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 1 0 0.2" type="sphere" group="1"/>
+        <site name="rightview_site:xaxis" pos="0.05 0 0" size="0.05 0.005 0.005" rgba="1 0 0 1" type="box" group="1"/>
+        <site name="rightview_site:yaxis" pos="0 0.05 0" size="0.005 0.05 0.005" rgba="0 1 0 1" type="box" group="1"/>
+        <site name="rightview_site:zaxis" pos="0 0 0.05" size="0.005 0.005 0.05" rgba="0 0 1 1" type="box" group="1"/>
+    </body>  
+    </worldbody>
+</mujoco>
