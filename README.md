@@ -1,4 +1,4 @@
-# HACMan Code Release
+# HACMan
 
 <p align="center">
   <img src="docs/demo.gif" width="500">
