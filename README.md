@@ -32,7 +32,14 @@ Please feel free to open an issue or email us at {wenxuanz, bowenj}@andrew.cmu.e
 
 First, install the conda environment:
 ```
-conda env create -f environment.yml
+conda create --name hacman python=3.8
+conda activate hacman
+```
+
+Install the requirements.txt
+```
+pip install setuptools==65.5.0 "wheel<0.40.0" # because of gym 0.21 issue https://github.com/openai/gym/issues/3176.
+pip install -r requirements.txt
 ```
 
 Install `Pytorch 1.11.0 + cu113`. Note: the compatibility with other Pytorch version has not been tested.
